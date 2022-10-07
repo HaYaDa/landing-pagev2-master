@@ -10,13 +10,13 @@
 * [Technologies](#technologies)
 
 ## GitHub-Repository
-[Repo](https://github.com/HaYaDa/landing-pagev2-master)
+[LandingPage-GithubRepo](https://github.com/HaYaDa/landing-pagev2-master)
 ---
 ## Demo of Project
-[Landing Page Demo](https://hayada.github.io/landing-pagev2-master/)
+[Landing Page - Github Page](https://hayada.github.io/landing-pagev2-master/)
 ---
 ## Project Name
-**Project:** Landing Page Project ( Masterschool Web Development Nanodegree Program - 5. CSS, Website Layout, Website Components )
+**Project:Landing Page ( Masterschool Web Development Nanodegree Program - 5. CSS, Website Layout, Website Components )** 
 ---
 ## Project Description
 **Project Summary**
