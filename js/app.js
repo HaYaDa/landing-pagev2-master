@@ -23,23 +23,18 @@
  * 
 */
 const sectionsList = document.querySelectorAll('section'); 
-
-
-
 /**
  * End Global Variables
  * Start Helper Functions
  * 
 */
 
-
-
 /**
  * End Helper Functions
  * Begin Main Functions
  * 
 */
-
+// Build menu 
 // build the nav
 for (i = 0; i < sectionsList.length; i++) {
     let listItem = document.createElement('li');
@@ -54,6 +49,11 @@ for (i = 0; i < sectionsList.length; i++) {
     document.getElementById('navbar__list').appendChild(listItem); 
 }
 
+/**
+ * End Main Functions
+ * Begin Events
+ * 
+*/
 
 // Add class 'your-active-class' to section when near top of viewport
 function makeActiveClass() {
@@ -62,7 +62,7 @@ function makeActiveClass() {
         let viewport = section.getBoundingClientRect(); 
         // define variable for the navItem for related section
         let linkClass = document.getElementById(`${section.id}Link`);
-        console.log(linkClass); 
+        //console.log(linkClass); 
         if (viewport.top <= 150 && viewport.bottom >=150) {
             // add active class to section in the viewport
             section.classList.add('active'); 
@@ -79,17 +79,6 @@ function makeActiveClass() {
 
 
 // Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
-// Scroll to section on link click
 // Scroll to section on link click
 const links2Sections = document.querySelectorAll('a');
 links2Sections.forEach((item) => {
@@ -102,20 +91,23 @@ links2Sections.forEach((item) => {
 // Set sections as active
 document.addEventListener('scroll', () => makeActiveClass());  
 
-//console.log(document.getElementById('section2Link').dataset.link)
-
 // Contact Form
 const submit = document.querySelector('#submit');
 submit.addEventListener('submit', (e) => {
     e.preventDefault(); 
-    console.log("form submitted... ");
-
     const name = document.querySelector('#name').value; 
     const email = document.querySelector('#email').value;
     const user = {name, email}; 
     console.log(user)
-    const h3 = document.createElement('h3');
-    h3.textContent=`Thank you ${user.name} for your subscription...`; 
-    submit.appendChild(h3); 
+    const title = document.createElement('h4');
+    const formName = document.createElement('p');
+    const formEmail = document.createElement('p'); 
+    title.textContent=`Collected data from form: `; 
+    formName.textContent=`NAME: ${name}`;
+    formEmail.textContent=`EMAIL: ${email}`; 
+    submit.appendChild(title); 
+    submit.appendChild(formName);
+    submit.appendChild(formEmail); 
     document.querySelectorAll('input').forEach(input => input.value = ""); 
+    return console.log("form submitted... ");
 })
